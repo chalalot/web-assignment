@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-color: #FBFFDC;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #A4907C;
+    color: #fff;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+}
+.checked {
+    color: rgb(255, 157, 0);
+}
+#book-title {
+    font-size: 48px;
+    margin-top: 80px;
+}
+#author {
+    font-size: 30px;
+    padding-top: 0;
+}
+.logo {
+    display: flex;
+    align-items: row;
+}
+.logo img {
+    height: 40px; /* Set an appropriate height for your logo
+    float: left; /* Float the logo to the left */
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.logo p {
+    padding: 6px 15px;
+    font-family: 'Fleur De Leah', cursive;
+    font-size: 30px;
+    color:#D0F5BE;
+}
+.navbar {
+    float: right; /* Float the navigation bar to the right */
+    margin-right: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    padding: 10px 15px;
+    font-family: 'Fuzzy Bubbles', cursive;
+    color: #FBFFDC;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+.sect1 {
+    display: flex;
+    background-image:linear-gradient(
+        to bottom,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(251,255,220, 1) 100%), url(../img/background.jpg);
+    /* background: linear-gradient(180deg, #A4907C 20%,#FBFFDC 90%); */
+    background-size: cover;
+    height: 100vh;
+    padding-top: 40px;
+}
+
+.sect1 .left{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin: 5%;
+    
+}
+.sect1 .left h1 {
+    font-size: 500%;
+    font-family: 'Dancing Script', cursive;
+    color:#FBFFDC;
+    padding: 10px;
+    background-image: url(../img/paint4-removebg-preview.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.sect1 .left p {
+    font-family: 'Fuzzy Bubbles', cursive;
+    padding: 5%;
+    
+}
+.sect1 .left{ 
+    position: relative;
+}
+.sect1 .right {
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.sect1 .right .cover {
+    width: 80%;
+
+    position: absolute;
+
+}
+.sect1 .right .book {
+    position: absolute;
+    width: 55%;
+    border: 16px double #D0F5BE;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+} 
+.sect2 {
+    display: block;
+    height: auto;
+    background: #FBFFDC;
+    background: linear-gradient(180deg, #FBFFDC 20%,#D0F5BE 90%);
+}
+.sect2 .category {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 48px;
+}
+
+.sect2 .block-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.sect2 .book {
+    width: 15%;
+    margin: 4%;
+    border: 10px double #A4907C;
+}
+.sect3 {
+    height: 100vh;
+    background: #D0F5BE;
+    background: linear-gradient(181deg, #D0F5BE 20%, #98EECC 80%);
+} */
+
+.leaves {
+    position: absolute;
+    width: 10%;
+    height: 10vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    pointer-events: none;
+}
+.leaves .set {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.leaves .set div {
+    position: absolute;
+    display: block;
+}
+
+.leaves .set div:nth-child(1){
+    left: 20%;
+    animation: animate 14s linear infinite;
+}
+.leaves .set div:nth-child(2){
+    left: 50%;
+    animation: animate 16s linear infinite;
+}
+.leaves .set div:nth-child(3){
+    left: 70%;
+    animation: animate 20s linear infinite;
+}
+.leaves .set div:nth-child(4){
+    left: 5%;
+    animation: animate 15 linear infinite;
+}
+.leaves .set div:nth-child(5){
+    left: 85%;
+    animation: animate 11s linear infinite;
+}
+.leaves .set div:nth-child(6){
+    left: 60%;
+    animation: animate 20s linear infinite;
+}
+.leaves .set div:nth-child(7){
+    left: 90%;
+    animation: animate 15s linear infinite;
+}
+.leaves .set div:nth-child(8){
+    left: 15%;
+    animation: animate 18s linear infinite;
+}
+
+.leaves .set div:nth-child(9){
+    left: 55%;
+    animation: animate 10s linear infinite;
+}
+.leaves .set div:nth-child(10){
+    left: 54%;
+    animation: animate 11s linear infinite;
+}
+.leaves .set div:nth-child(11){
+    left: 26%;
+    animation: animate 13s linear infinite;
+}
+.leaves .set div:nth-child(12){
+    left: 76%;
+    animation: animate 9s linear infinite;
+}
+@keyframes animate {
+    0%
+    {
+        opacity: 0;
+        top: -10%;
+        transform: translateX(20px) rotate(0deg);
+    }
+    10%{
+        opacity: 1;
+    }
+    20%{
+        transform: translateX(-20px) rotate(45deg);
+    }
+    40%{
+        transform: translateX(-20px) rotate(45deg);
+    }
+    60%{
+        transform: translateX(20px) rotate(90deg);
+    }
+    80%{
+        transform: translateX(-20px) rotate(180deg);
+    }
+    100%{
+        top: 110%;
+        transform: translateX(20px) rotate(225deg);
+    }
+}
