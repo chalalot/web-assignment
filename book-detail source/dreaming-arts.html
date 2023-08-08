@@ -1,0 +1,189 @@
+<!-- RMIT University Vietnam
+Course: COSC2430 Web Programming
+Semester: 2023A
+Assessment: Assignment 1
+Author: Tran Tuan Trung
+ID: s3978165
+Acknowledgement: Acknowledge the resources that you use here. 
+OnlineTutorialsYT. (2023a). Animated Glassmorphism Login Form using Html & CSS. [2 Mar]. Available at: https://youtu.be/9OjC44GnxAM [Accessed 1 Aug. 2023].
+‌
+OnlineTutorialsYT. (2023b). CSS Water Wave Background Animation Effects | Html CSS @OnlineTutorialsYT. [6 Mar]. Available at: https://youtu.be/cxOaxNQVzrM [Accessed 1 Aug. 2023].
+‌
+Web Dev Creative. (2023). How To Create a Responsive Navbar Using HTML & CSS | Step By Step Tutorial. [27 Jan] Available at: https://youtu.be/GdrbE-s5DgQ [Accessed 1 Aug. 2023].
+‌
+OpenAI (2023) ChatGPT (May 24 version) [Large language model], accessed 26 Jul. 2023. https://chat.openai.com/share/81f2e81f-f137-41b6-9881-39af1672ae3c.
+
+Color Hunt. (n.d.).  - Color Palettes for Designers and Artists. Available at: https://colorhunt.co/. [Accessed 25 July. 2023].
+‌
+Google Fonts. (n.d.). Browse Fonts. [online] Available at: https://fonts.google.com/?sort=popularity&category=Handwriting [Accessed 25 Jul. 2023].
+‌
+Morgan Long. (2020). AUTUMNAL READ WITH ME || 1 hour of reading with cozy music. [13 Nov] Available at: https://youtu.be/zxad63kl87g [Accessed 2 Aug. 2023].
+‌
+iNlOONa. (2023). Peaceful Afternoon, Lazy Summer day Comfort playlists | RnB playlist. [4 Jul] Available at: https://youtu.be/Ivtcz6XjoUM [Accessed 2 Aug. 2023].
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dreaming Arts</title>
+    <link rel="icon" type="image/x-icon" href="../img/38b9f123517d5e69307bf06e2f9ba5dc-removebg-preview.png">
+    <link rel="stylesheet" href="../css/style_book.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Fleur+De+Leah&family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
+</head>
+<!-- flex box for header container -->
+<header>
+    <!-- clickable logo which redirect to home -->
+    <div class="header">
+        <a href="../index.html" class="logo"> 
+            <img src="../img/38b9f123517d5e69307bf06e2f9ba5dc-removebg-preview.png" alt="PageLogo">
+            <p>Seasonal Reads</p>
+        </a>
+        <!-- navbar initialization -->
+        <nav class="navbar">
+            <a href="../index.html">Home</a>
+            <a href="../autumn.html">Autumn Books</a>
+            <a href="../summer.html">Summer Books</a>
+            <a href="../contact.html">Contact Us</a>
+        </nav> 
+        <div class="nav-button">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+    <!-- a hidden dropdown menu for smaller screen only -->
+    <div class="dropdown">
+        <a href="../index.html">Home</a>
+        <a href="../autumn.html">Autumn Books</a>
+        <a href="../summer.html">Summer Books</a>
+        <a href="../contact.html">Contact</a>
+    </div>
+    <!-- JavaScript to trigger the dropdown menu on click -->
+    <script>
+        const navButton = document.querySelector('.nav-button')
+        const navButtonIcon = document.querySelector('.nav-button i')
+        const dropdown = document.querySelector('.dropdown')
+
+        navButton.onclick = function() {
+            dropdown.classList.toggle('open')
+            const isOpen = dropdown.classList.contains('open')
+            navButtonIcon.classList = isOpen
+                ? "fa-solid fa-xmark"
+                : "fa-solid fa-bars"
+        }
+    </script>
+</header>
+<body>
+    <!--falling leaves effects initializing -->
+    <div class="leaves">
+        <div class="set">
+            <div><img src="../img/leaf2-removebg-preview.png" alt="leaf2"></div>
+            <div><img src="../img/leaf3-removebg-preview.png" alt="leaf3"></div>
+            <div><img src="../img/leaf4-removebg-preview.png" alt="leaf4"></div>
+            <div><img src="../img/leaf1-removebg-preview.png" alt="leaf1"></div>
+            <div><img src="../img/leaf2-removebg-preview.png" alt="leaf2"></div>
+            <div><img src="../img/leaf3-removebg-preview.png" alt="leaf3"></div>
+            <div><img src="../img/leaf1-removebg-preview.png" alt="leaf1"></div>
+            <div><img src="../img/leaf4-removebg-preview.png" alt="leaf4"></div>
+            <div><img src="../img/leaf1-removebg-preview.png" alt="leaf1"></div>
+            <div><img src="../img/leaf2-removebg-preview.png" alt="leaf2"></div>
+            <div><img src="../img/leaf3-removebg-preview.png" alt="leaf3"></div>
+            <div><img src="../img/leaf4-removebg-preview.png" alt="leaf4"></div>
+            <div><img src="../img/leaf1-removebg-preview.png" alt="leaf1"></div>
+            <div><img src="../img/leaf2-removebg-preview.png" alt="leaf2"></div>
+            <div><img src="../img/leaf3-removebg-preview.png" alt="leaf3"></div>
+            <div><img src="../img/leaf4-removebg-preview.png" alt="leaf4"></div>
+            <div><img src="../img/leaf1-removebg-preview.png" alt="leaf1"></div>
+            <div><img src="../img/leaf2-removebg-preview.png" alt="leaf2"></div>
+            <div><img src="../img/leaf3-removebg-preview.png" alt="leaf3"></div>
+            <div><img src="../img/leaf4-removebg-preview.png" alt="leaf4"></div>
+            <div><img src="../img/leaf1-removebg-preview.png" alt="leaf1"></div>
+            <div><img src="../img/leaf2-removebg-preview.png" alt="leaf2"></div>
+            <div><img src="../img/leaf3-removebg-preview.png" alt="leaf3"></div>
+            <div><img src="../img/leaf4-removebg-preview.png" alt="leaf4"></div>
+        </div>
+    </div>
+    <!-- extra container for the breadcrumb to be an element -->
+    <section class="sect1-container">
+        <!-- section 1 box -->
+        <ul class="breadcrumb">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../summer.html">Summer Books</a></li>
+            <li><a href="../summer.html">Thriller</a></li>
+            <li><span>The Dreaming Arts</span></li>
+        </ul> 
+        <section class="sect1">
+            <!-- extra container for middle and right section, for further rearranging of smaller screens -->
+            <div class="detail-container">
+                <!-- right hand side for description -->
+                <div class="right">
+                    <h1 id="price">$19.99</h1>
+                    <div class="cart">
+                        <button>Add to <br> cart</button>
+                    </div>
+                </div>
+                <!-- middle for more images -->
+                <div class="middle">
+                    <img src="../img/book6-1.webp" alt="moreBookImage">
+                    <img src="../img/book6-2.jpg" alt="moreBookImage">
+                    <img src="../img/book6-3.jpg" alt="moreBookImage">
+                </div>
+            </div>
+            <!-- left hand side for the main book image -->
+            <div class="left">
+                <img class="book" src="../img/book6.webp" alt="main book image">
+            </div>
+        </section>
+    </section>
+    <!-- section for book name and extra description -->
+    <section class="extra-description">
+        <div class="book-name">
+            <h1>The Dreaming Arts</h1>  
+        </div>
+        <div class="description">
+            <p>"The Dreaming Arts" is an enchanting fantasy novel that transports readers to a world where dreams hold immense power. In this magical realm, a young artist named Mia discovers her unique ability to shape dreams through her art. As she hones her skills, she unravels a hidden destiny tied to the fate of her fantastical realm. With captivating prose and breathtaking imagery, the novel explores the boundaries between reality and imagination. Along her journey, Mia encounters a diverse cast of characters, from whimsical creatures to formidable adversaries, who challenge her perception of self and purpose. "The Dreaming Art" weaves a mesmerizing tale of creativity, courage, and the profound impact of dreams on both realms, bridging the gap between the waking world and the boundless expanse of the imagination.</p>
+        </div>
+    </section>
+</body>
+<footer>
+    <!-- upper part for decoration -->
+    <div class="up">
+        <img src="../img/island1.png" alt="coconut island">
+        <div class="video-container">
+        <h1 id="music">Music for Reading</h1>
+        <iframe src="https://www.youtube.com/embed/zxad63kl87g?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <img src="../img/island2.png" alt="rock island">
+    </div>
+    <!-- down part for nav bar and extra information -->
+    <div class="down">
+        <!-- box for decorative waves -->
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <!-- nav bar and contact information -->
+        <ul class="icon">
+            <li><a href=""><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href=""><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href=""><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href=""><ion-icon name="logo-tiktok"></ion-icon></a></li>
+        </ul>
+        <ul class="nav2">
+            <li><a href="">About Us</a></li>
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Terms</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>  
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+    </div>
+    <!-- import for logos and icons used in the html -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</footer>
+</html>
