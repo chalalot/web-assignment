@@ -1,0 +1,588 @@
+/* RMIT University Vietnam
+Course: COSC2430 Web Programming
+Semester: 2023A
+Assessment: Assignment 1
+Author: Tran Tuan Trung
+ID: s3978165
+Acknowledgement: Acknowledge the resources that you use here. 
+OnlineTutorialsYT. (2023a). Animated Glassmorphism Login Form using Html & CSS. [2 Mar]. Available at: https://youtu.be/9OjC44GnxAM [Accessed 1 Aug. 2023].
+‌
+OnlineTutorialsYT. (2023b). CSS Water Wave Background Animation Effects | Html CSS @OnlineTutorialsYT. [6 Mar]. Available at: https://youtu.be/cxOaxNQVzrM [Accessed 1 Aug. 2023].
+‌
+Web Dev Creative. (2023). How To Create a Responsive Navbar Using HTML & CSS | Step By Step Tutorial. [27 Jan] Available at: https://youtu.be/GdrbE-s5DgQ [Accessed 1 Aug. 2023].
+‌
+OpenAI (2023) ChatGPT (May 24 version) [Large language model], accessed 26 Jul. 2023. https://chat.openai.com/share/81f2e81f-f137-41b6-9881-39af1672ae3c.
+
+Color Hunt. (n.d.).  - Color Palettes for Designers and Artists. Available at: https://colorhunt.co/. [Accessed 25 July. 2023].
+‌
+Google Fonts. (n.d.). Browse Fonts. [online] Available at: https://fonts.google.com/?sort=popularity&category=Handwriting [Accessed 25 Jul. 2023].
+‌
+Morgan Long. (2020). AUTUMNAL READ WITH ME || 1 hour of reading with cozy music. [13 Nov] Available at: https://youtu.be/zxad63kl87g [Accessed 2 Aug. 2023].
+‌
+iNlOONa. (2023). Peaceful Afternoon, Lazy Summer day Comfort playlists | RnB playlist. [4 Jul] Available at: https://youtu.be/Ivtcz6XjoUM [Accessed 2 Aug. 2023]. */
+
+/* general styling and theme fonts of the web */
+span, h2, p, a, button{
+    text-decoration: none;
+    color: #555;
+    text-shadow: 13px 10px 9px rgb(79, 79, 79, 0.5);
+    font-family: 'Fuzzy Bubbles', cursive; 
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav-button, .dropdown {
+    display: none;
+}
+
+/* main section for form initializing */
+.sect1 {
+    background: linear-gradient(181deg, #D0F5BE 20%, #FBFFDC 90%);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* form organizing content */
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+.option {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
+.button-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5%;
+}
+/* form styling */
+form {
+    backdrop-filter: blur(5px);
+    background: transparent;
+    padding: 5%;
+    padding-top: 0;
+    margin: 2%;
+    width: 70%;
+    border-radius: 30px;
+    width: 100%;
+    z-index: 100;
+}
+label {
+    font-size: 2vw;
+    text-decoration: none;
+    color: #555;
+    text-shadow: 9px 9px 10px rgb(79, 79, 79, 0.2);
+    font-family: 'Fuzzy Bubbles', cursive; 
+}
+input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+    text-align: center;
+    padding: 10px;
+    width: 60%;
+    border-radius: 20px;
+}
+textarea {
+    resize: vertical;
+}
+button {
+    font-size: 1.5em;
+    border: none;
+    padding: 10%;
+    background-color: transparent;
+    justify-content: center;
+    text-align: center;
+    background-image: url(../img/v788-mynt-08-removebg-preview.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: fade-up 1s; 
+    cursor: pointer;
+}
+
+/* styling for the page's heading */
+.sect1 h1 {
+    text-shadow: 8px 7px 16px rgba(245, 255, 198, 0.5);
+    animation: fade-up 1s; 
+    font-size: 8vw;
+    font-family: 'Dancing Script', cursive;
+    color:#FBFFDC;
+    padding: 30px;
+    background-image: url(../img/paint4-removebg-preview.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+}
+/* header styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #A4907C;
+    color: #fff;
+    position: fixed;
+    z-index: 1001;
+    width: 100%;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+}
+/* logo styling */
+.logo {
+    display: flex;
+    align-items: row;
+}
+.logo img {
+    height: 40px; 
+    float: left; 
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.logo p {
+    padding: 6px 15px;
+    font-family: 'Fleur De Leah', cursive;
+    font-size: 2rem;
+    color:#D0F5BE;
+}
+/* navbar styling */
+.navbar {
+    float: right; 
+    margin-right: 20px;
+}
+
+.navbar a, .dropdown a {
+    text-decoration: none;
+    padding: 10px 15px;
+    font-family: 'Fuzzy Bubbles', cursive;
+    color: #FBFFDC;
+}
+/* breadcrumb layout and styling */
+.breadcrumb {
+    list-style: none;
+    font-size: 2vw;
+    display: flex;
+    padding-top: 70px;
+    justify-content: center;
+    background-color: #A4907C;
+    width: 40%;
+    border-radius: 0px 0px 20px 20px;
+    margin: 0 auto;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
+}
+.breadcrumb li {
+    display: inline; 
+}
+.breadcrumb li:not(:last-child):after {
+    content: " ›"; 
+    color: #FBFFDC; 
+}
+.breadcrumb li a, .breadcrumb li span {
+    text-decoration: none;
+    color: #FBFFDC;
+    font-weight: 100;
+    text-shadow: 8px 7px 16px rgba(245, 255, 198, 0.5);
+}
+/* footer initializing with up and down halves */
+.up{
+    height: 50vh;
+    position: relative;
+    background: linear-gradient(181deg, #FBFFDC 20%, #F4D160 90%);
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3%;
+    align-items: center;
+}
+.down {
+    height: 40vh;
+    position: relative;
+    width: 100%;
+    background: linear-gradient(181deg, #80D7FF 20%, #1065aa 90%);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
+}
+/* styling for the video block */
+.video-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+iframe {
+    width: 30vw;
+    height: 35vh;
+    border-radius: 20px;
+    border: 10px double #A4907C;
+    box-shadow: 20px 20px 4px rgba(0, 0, 0, 0.2);
+    
+}
+#music {
+    color: #414040;
+    font-size: 4vw;
+    padding-bottom: 3%;
+}
+/* footer nav bar and content styling */
+.up h1{
+    font-size: 5vw;
+    font-family: 'Dancing Script', cursive;
+    color: #A4907C;
+}
+.icon, .nav2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+.icon li, .nav2 li {
+    list-style: none;
+}
+.icon li a {
+    font-size: 3em;
+    color: #FBEEAC;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+.nav2 li a, .down p {
+    font-size: 1em;
+    color: #FBEEAC;
+    margin: 10px 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+}
+/* page hovering effects */
+.icon li a:hover, .nav2 li a:hover {
+    transform: translateY(-10px);
+    transition: 0.5s; 
+}
+.block-container a:hover, button:hover {
+    transform: translateY(-30px) scale(1.022);
+    transition: 0.5s; 
+}
+.category:hover {
+    transform: translateY(-10px) scale(1.022);
+    transition: 0.5s; 
+}
+.navbar a:hover, .dropdown a:hover{
+    transform: scale(1.022);
+    transition: 0.5s; 
+    background-color: #614E36;
+    border-radius: 20px;
+}
+.breadcrumb li a:hover{
+    transform: scale(1.022);
+    transition: 0.5s; 
+    background-color: #614E36;
+    border-radius: 20px;
+}
+/* animation */
+
+/* footer's island waves animation */
+.down .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+}
+#wave1 {
+    background-image: url(../img/wave.png);
+    background-size: 1000px 100px;
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: wave 5s linear infinite;
+}
+#wave2 {
+    background-image: url(../img/wave.png);
+    background-size: 1000px 100px;
+    z-index: 999;
+    opacity: 0.4;
+    bottom: 0;
+    animation: wave 8s linear infinite;
+}
+#wave3 {
+    background-image: url(../img/wave.png);
+    background-size: 1000px 100px;
+    z-index: 998;
+    opacity: 0.6;
+    bottom: 0;
+    animation: wave 11s linear infinite;
+}
+#wave4 {
+    background-image: url(../img/wave.png);
+    background-size: 1000px 100px;
+    z-index: 997;
+    opacity: 0.8;
+    bottom: 0;
+    animation: wave 13s linear infinite;
+}
+/* keyframe for animation */
+@keyframes wave {
+    0%
+    {
+        background-position-x: 1000px;
+    }
+    100%
+    {
+        background-position-x: 0px;
+    }
+}
+/* page's falling leaves initializing and setting up falling area*/
+.leaves {
+    position: absolute;
+    width: 10%;
+    height: 150vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    pointer-events: none;
+}
+.leaves .set {
+    position: absolute;
+    width: 100%;
+    height: 150vh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+.leaves .set div {
+    position: absolute;
+    display: block;
+}
+/* set effects for each leaf */
+.leaves .set div:nth-child(1){
+    left: 20%;
+    animation: animate 27s linear infinite;
+}
+.leaves .set div:nth-child(2){
+    left: 50%;
+    animation: animate 24s linear infinite;
+}
+.leaves .set div:nth-child(3){
+    left: 70%;
+    animation: animate 20s linear infinite;
+}
+.leaves .set div:nth-child(4){
+    left: 5%;
+    animation: animate 40s linear infinite;
+}
+.leaves .set div:nth-child(5){
+    left: 25%;
+    animation: animate 34s linear infinite;
+}
+.leaves .set div:nth-child(6){
+    left: 60%;
+    animation: animate 20s linear infinite;
+}
+.leaves .set div:nth-child(7){
+    left: 70%;
+    animation: animate 15s linear infinite;
+}
+.leaves .set div:nth-child(8){
+    left: 15%;
+    animation: animate 18s linear infinite;
+}
+
+.leaves .set div:nth-child(9){
+    left: 80%;
+    animation: animate 33s linear infinite;
+}
+.leaves .set div:nth-child(10){
+    left: 54%;
+    animation: animate 31s linear infinite;
+    animation-delay: 10s;
+}
+.leaves .set div:nth-child(11){
+    left: 26%;
+    animation: animate 29s linear infinite;
+    animation-delay: 6s;
+}
+.leaves .set div:nth-child(12){
+    left: 84%;
+    animation: animate 27s linear infinite;
+    animation-delay: 5s;
+}
+
+/* keyframe for falling animation */
+@keyframes animate {
+    0%
+    {
+        opacity: 0;
+        top: -10%;
+        transform: translateX(20px) rotate(0deg);
+    }
+    10%{
+        opacity: 1;
+    }
+    20%{
+        transform: translateX(-20px) rotate(45deg);
+    }
+    40%{
+        transform: translateX(-20px) rotate(45deg);
+    }
+    60%{
+        transform: translateX(20px) rotate(90deg);
+    }
+    80%{
+        transform: translateX(-20px) rotate(180deg);
+    }
+    100%{
+        top: 110%;
+        transform: translateX(20px) rotate(225deg);
+    }
+}
+/* keyframes for content appearing animation */
+@keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px) scale(1);
+    }
+}
+/* media for smaller tablets screen */
+@media (max-width: 992px) {
+    /* restyle for breadcrumb */
+    .breadcrumb {
+        font-size: 3vw;
+        padding-bottom: 2%;
+    }
+    /* readjust styling and layout for footer */
+    .up img {
+        display: none;
+    }
+    .up {
+        display: flex;
+        justify-content: center;
+    }
+    .video-container {
+        margin: 0px 10vw;
+        width: 100%;
+    }
+    iframe {
+        margin: 0px 10vw;
+        width: 100%;
+    }
+    #music {
+        font-size: 10vw;
+    }
+    /* change navbar layout to dropdown instead of horizontal */
+    .navbar {
+        display: none;
+    }
+    .nav-button {
+        display: flex;
+        justify-content: center;
+        padding-right: 2%;
+        font-size: 4vw;
+    }
+    .dropdown.open{
+        position: fixed;
+        display: flex;
+        align-items: center;
+        font-size: 3vw;
+        flex-direction: column;
+        background-color: #A4907C;
+        right: 0;
+        top: 56px;
+        width: 40%;
+        box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 0px 0px 20px 20px;
+        z-index: 1000;
+    }
+    .dropdown {
+        display: none;
+    }
+    /* readjust layout for input boxes to stack on each other */
+    .input-container:not(.with-options) {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-container {
+        display: flex;
+        text-align: center;
+    }
+    .option {
+        width: 100%;
+        margin: 5% 0px;
+    }
+    /* restyling text and input and element to fit with the view of small screens */
+    input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+        width: 100%;
+        height: 8vh;
+        font-size: 3vh;
+    }
+    label {
+        font-size: 3vh;
+        margin-bottom: 5px;
+    }
+    button {
+        font-size: 2vh;
+    }
+    input[type = 'checkbox'], input[type = 'radio'] {
+        height: 3vh;
+        width: 3vh;
+    }
+}
+/* media for smaller mobile devices */
+@media (max-width: 767px) {
+    /* resizing elements for mobile screen */
+    .down p {
+        font-size: 3vw;
+    }
+    .nav2 li {
+        font-size: 3vw;
+    }
+    .icon li a {
+        font-size: 14vw;
+    }
+    .video-container {
+        margin: 0px 10vw;
+    }
+    #music {
+        font-size: 10vw;
+    }
+
+    iframe {
+        margin: 0px 10vw;
+        width: 100%;
+    }
+    /* remove falling leaves */
+    .leaves {
+        display: none;
+    }
+    /* resizing the dropdown menu */
+    .nav-button {
+        font-size: 5vh;
+    }
+    .dropdown.open{
+        font-size: 1.5rem;
+        width: 100vw;
+        top: 51px;
+    }
+    .dropdown.open a {
+        padding: 5%;
+    }
+    /* resizing header's logo */
+    .logo p {
+        font-size: 1.5rem;
+    }
+    .breadcrumb {
+        padding-top: 60px;
+    }
+}
