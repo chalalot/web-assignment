@@ -578,11 +578,4 @@ iframe {
     .dropdown.open a {
         padding: 5%;
     }
-    /* resizing header's logo */
-    .logo p {
-        font-size: 1.5rem;
-    }
-    .breadcrumb {
-        padding-top: 60px;
-    }
 }
